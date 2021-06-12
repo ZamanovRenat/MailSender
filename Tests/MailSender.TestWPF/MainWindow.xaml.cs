@@ -14,13 +14,13 @@ namespace MailSender.TestWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            using var message = new MailMessage("zamanoff.renat@yandex.ru", "zamanov.renat@mail.ru");
+            using var message = new MailMessage(MailSmtpClass.OutPutMail, MailSmtpClass.InPutMail);
             message.Subject = "Тестовое сообщение от " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ff");
             message.Body = "Тело тестового сообщения " + DateTime.Now.ToString("F");
 
             //message.Attachments.Add(new Attachment());
 
-            using var client = new SmtpClient("smtp.yandex.ru", 25)
+            using var client = new SmtpClient(MailSmtpClass.SmtpServer, MailSmtpClass.ServerPort)
             {
                 EnableSsl = true,
                 Credentials = new NetworkCredential
