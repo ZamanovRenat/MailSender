@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender.TestWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" HorizontalAlignment="Left">
+        Title="Рассыльщик почты" Height="450" Width="800" HorizontalAlignment="Left">
     <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
         <Button Content="Отправить" Margin="200, 400, 200, 10" Click="Button_Click"></Button>
         <TextBox Name="LoginEdit" Text="Имя пользователя" Margin="50, 350, 450, 50" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
