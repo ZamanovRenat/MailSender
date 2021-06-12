@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender.TestWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" Height="450" Width="800" HorizontalAlignment="Left">
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Button Content="Отправить" Margin="200, 350, 200, 30" Click="Button_Click"></Button>
+        <TextBox Name="LoginEdit" Text="Имя пользователя" Margin="50, 200, 450, 200" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+        <Label Content="Имя пользователя" Margin="50, 150, 450, 250" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
+        <Label Content="Пароль" Margin="450, 150, 50, 250" VerticalAlignment="Top"></Label>
+        <PasswordBox Name="PasswordEdit" Margin="450, 200, 50, 200" VerticalAlignment="Top"></PasswordBox>
     </Grid>
 </Window>
