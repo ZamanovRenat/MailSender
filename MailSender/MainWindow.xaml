@@ -13,7 +13,7 @@
                 <MenuItem Header="Выход" Click="Exit_OnClick"/>
             </MenuItem>
             <MenuItem Header="Справка">
-                <MenuItem Header="О программе"/>
+                <MenuItem Header="О программе" Click="About_OnClick"/>
             </MenuItem>
         </Menu>
         <StatusBar Background="Azure" DockPanel.Dock="Bottom">
@@ -229,7 +229,7 @@
                                 <TextBox/>
                             </GroupBox>
                             <GroupBox Header="Текст письма">
-                                <TextBox/>
+                                <TextBox AcceptsReturn="True" AcceptsTab="True"/>
                             </GroupBox>
                         </DockPanel>
                     </GroupBox>
