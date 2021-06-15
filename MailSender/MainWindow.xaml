@@ -59,10 +59,15 @@
                         </ToolBar>
                         <ToolBar Band="1" BandIndex="0">
                             <Label Content="Отправители"/>
-                            <ComboBox Width="120" SelectedIndex="0">
-                                <ComboBoxItem Content="Отправитель 1"/>
-                                <ComboBoxItem Content="Отправитель 2"/>
-                                <ComboBoxItem Content="Отправитель 3"/>
+                            <ComboBox Width="120" SelectedIndex="0" ItemsSource="{x:Static data:TestData.Senders}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type model:Sender}">
+                                        <StackPanel Orientation="Horizontal" ToolTip="{Binding Description}">
+                                            <TextBlock Text="{Binding Name}" Margin="0,0,3,0"/>
+                                            <TextBlock Text="{Binding Address}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
                             </ComboBox>
                             <Button ToolTip="Добавление">
                                 <StackPanel Orientation="Horizontal">
@@ -100,12 +105,18 @@
                             <Button ToolTip="Удаление" fa:Awesome.Content="Solid_TrashRestore" Foreground="CornflowerBlue"/>
                         </ToolBar>
                     </ToolBarTray>
-                    <DataGrid Grid.Row="1" AutoGenerateColumns="False">
+                    <DataGrid Grid.Row="1" AutoGenerateColumns="False"
+                              ItemsSource="{x:Static data:TestData.Recipients}"
+                              HorizontalGridLinesBrush="Bisque"
+                              VerticalGridLinesBrush="Gray"
+                              AlternatingRowBackground="Azure"
+                              CanUserAddRows="False"
+                              HeadersVisibility="Column">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" MinWidth="40" MaxWidth="80"/>
-                            <DataGridTextColumn Header="Имя" Width="*" MinWidth="150"/>
-                            <DataGridTextColumn Header="Адрес" MinWidth="120"/>
-                            <DataGridTextColumn Header="Описание" MinWidth="140"/>
+                            <DataGridTextColumn Header="ID" MinWidth="40" MaxWidth="80" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Имя" Width="*" MinWidth="150" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Адрес" MinWidth="120" Binding="{Binding Address}"/>
+                            <DataGridTextColumn Header="Описание" MinWidth="140" Binding="{Binding Description}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

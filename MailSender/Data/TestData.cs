@@ -16,6 +16,24 @@ namespace MailSender.Data
                 UseSSL = i % 2 == 0
             })
             .ToList();
-        
+        public static List<Sender> Senders { get; } = Enumerable.Range(1, 10)
+            .Select(i => new Sender
+            {
+                Id = i,
+                Name = $"Отправитель - {i}",
+                Address = $"sender-{i}.server.ru",
+                Description = $"Описание отправителя {i}",
+            })
+            .ToList();
+
+        public static List<Recipient> Recipients { get; } = Enumerable.Range(1, 10)
+            .Select(i => new Recipient
+            {
+                Id = i,
+                Name = $"Получатель - {i}",
+                Address = $"recipient-{i}.server.ru",
+                Description = $"Описание получателя {i}"
+            })
+            .ToList();
     }
 }
