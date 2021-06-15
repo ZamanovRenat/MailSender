@@ -5,6 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:MailSender"
+        xmlns:data="clr-namespace:MailSender.Data"
+        xmlns:model="clr-namespace:MailSender.Models"
+
+
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
@@ -34,10 +38,8 @@
                     <ToolBarTray Grid.Row="0">
                         <ToolBar>
                             <Label Content="Сервера" Margin="0, 0, 26, 0"/>
-                            <ComboBox Width="120" SelectedIndex="0">
-                                <ComboBoxItem Content="Сервер 1"/>
-                                <ComboBoxItem Content="Сервер 2"/>
-                                <ComboBoxItem Content="Сервер 3"/>
+                            <ComboBox Width="120" SelectedIndex="0" 
+                                      ItemsSource="{x:Static data:TestData.Servers}">
                             </ComboBox>
                             <Button ToolTip="Добавление" Margin="0, 0,2,0">
                                 <StackPanel Orientation="Horizontal">
