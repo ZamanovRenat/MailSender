@@ -6,4 +6,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Media\add.png" />
+    <None Remove="Media\calendar.png" />
+    <None Remove="Media\delete.png" />
+    <None Remove="Media\edit.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Media\add.png" />
+    <Resource Include="Media\calendar.png" />
+    <Resource Include="Media\delete.png" />
+    <Resource Include="Media\edit.png" />
+  </ItemGroup>
+
 </Project>
