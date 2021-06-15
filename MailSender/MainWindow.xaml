@@ -253,7 +253,7 @@
                     </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="Статистика"></TabItem>
+            <TabItem Header="Статистика" IsEnabled="False"></TabItem>
         </TabControl>
     </DockPanel>
 </Window>
