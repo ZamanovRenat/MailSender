@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -54,7 +55,6 @@
                                 </StackPanel>
                             </Button>
                         </ToolBar>
-
                         <ToolBar Band="1" BandIndex="0">
                             <Label Content="Отправители"/>
                             <ComboBox Width="120" SelectedIndex="0">
@@ -62,21 +62,41 @@
                                 <ComboBoxItem Content="Отправитель 2"/>
                                 <ComboBoxItem Content="Отправитель 3"/>
                             </ComboBox>
-                            <Button Content="Добавить"/>
-                            <Button Content="Редактировать"/>
-                            <Button Content="Удалить"/>
+                            <Button ToolTip="Добавление">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:ImageAwesome Height="17" 
+                                                     Icon="Solid_PlusCircle" 
+                                                     Margin="0,0,5,0"
+                                                     Foreground="CornflowerBlue" />
+                                    <TextBlock Text="Добавить"/>
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Редактирование" fa:Awesome.Content="Solid_UserEdit" Foreground="CornflowerBlue"/>
+                            <Button ToolTip="Удаление" fa:Awesome.Content="Solid_TrashRestore" Foreground="CornflowerBlue"/>
                         </ToolBar>
-
                         <ToolBar Header="Планировщик">
-                            <Button Content="Перейти в планировщик"/>
+                            <Button ToolTip="Перейти в планировщик">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:ImageAwesome Height="17" 
+                                                     Icon="Regular_CalendarPlus" 
+                                                     Margin="0,0,5,0"
+                                                     Foreground="CornflowerBlue" />
+                                </StackPanel>
+                            </Button>
                         </ToolBar>
-
                         <ToolBar Header="Получатели" Band="1" BandIndex="1">
-                            <Button Content="Добавить"/>
-                            <Button Content="Редактировать"/>
-                            <Button Content="Удалить"/>
+                            <Button ToolTip="Добавление">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:ImageAwesome Height="17" 
+                                                     Icon="Solid_PlusCircle" 
+                                                     Margin="0,0,5,0"
+                                                     Foreground="CornflowerBlue" />
+                                    <TextBlock Text="Добавить"/>
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Редактирование" fa:Awesome.Content="Solid_UserEdit" Foreground="CornflowerBlue"/>
+                            <Button ToolTip="Удаление" fa:Awesome.Content="Solid_TrashRestore" Foreground="CornflowerBlue"/>
                         </ToolBar>
-
                     </ToolBarTray>
                 </Grid>
             </TabItem>
