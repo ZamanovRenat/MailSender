@@ -24,5 +24,12 @@ namespace MailSender
         {
             InitializeComponent();
         }
+
+        private void Exit_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void About_OnClick(object sender, RoutedEventArgs e) => MessageBox.Show("Программа рассыльщик почты", "О программе", MessageBoxButton.OK);
     }
 }
