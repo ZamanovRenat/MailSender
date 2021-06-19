@@ -8,7 +8,8 @@
         xmlns:data="clr-namespace:MailSender.Data"
         xmlns:model="clr-namespace:MailSender.Models;assembly=MailSender.lib"
         mc:Ignorable="d"
-        Title="Рассыльщик почты" 
+        Title="{Binding Title}" 
+        DataContext="{Binding MainModel, Source={StaticResource Locator}}"
         Height="450" 
         Width="800"
         Topmost="True">
@@ -26,7 +27,7 @@
                 <ResizeGrip/>
             </StatusBarItem>
             <StatusBarItem>
-                <TextBlock Text="Программа рассылки почты"/>
+                <TextBlock Text="{Binding Status}"/>
             </StatusBarItem>
         </StatusBar>
         <TabControl>
