@@ -144,7 +144,7 @@
                                     </Style>
                                 </StackPanel.Resources>
                                 <Button Content="Отправить сейчас"/>
-                                <Button Content="Запланировать"/>
+                                <Button Content="Запланировать" Command="{Binding SendMessageCommand}"/>
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>
