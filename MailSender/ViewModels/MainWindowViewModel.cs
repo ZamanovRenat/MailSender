@@ -67,6 +67,7 @@ namespace MailSender.ViewModels
 
         public ObservableCollection<Server> Servers { get; } = new();
 
+
         #region Command LoadServersCommand - Загрузка серверов
 
         /// <summary>Загрузка серверов</summary>

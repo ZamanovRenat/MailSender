@@ -41,8 +41,9 @@
                         <ToolBar>
                             <Label Content="Сервера" Margin="0, 0, 26, 0"/>
                             <ComboBox Width="120" SelectedIndex="0" 
-                                      ItemsSource="{x:Static data:TestData.Servers}">
+                                      ItemsSource="{Binding Servers}">
                             </ComboBox>
+                            <Button fa:Awesome.Content="Solid_Download" Command="{Binding LoadServersCommand}"/>
                             <Button ToolTip="Добавление" Margin="0, 0,2,0">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Height="20" Source="Media/add.png" Margin="0,0,3,0"/>
