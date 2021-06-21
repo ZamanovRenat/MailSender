@@ -15,6 +15,9 @@
 
   <ItemGroup>
     <PackageReference Include="FontAwesome5" Version="2.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +29,12 @@
     <Resource Include="Media\calendar.png" />
     <Resource Include="Media\delete.png" />
     <Resource Include="Media\edit.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
