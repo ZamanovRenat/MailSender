@@ -79,7 +79,6 @@ namespace MailSender.ViewModels
         public ObservableCollection<Recipient> Recipients { get; } = new();
         public ObservableCollection<Message> Messages { get; } = new();
 
-
         #region Command LoadDataCommand - Загрузка данных
 
         /// <summary>Загрузка данных</summary>
@@ -124,6 +123,7 @@ namespace MailSender.ViewModels
         }
 
         #endregion
+
         #region SelectedRecipient : Recipient - Выбранный получатель
 
         /// <summary>Выбранный получатель</summary>
