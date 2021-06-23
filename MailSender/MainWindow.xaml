@@ -19,6 +19,9 @@
             <MenuItem Header="Файл">
                 <MenuItem Header="Выход" Click="Exit_OnClick"/>
             </MenuItem>
+            <MenuItem Header="Данные">
+                <MenuItem Header="Загрузка" Command="{Binding LoadDataCommand}"/>
+            </MenuItem>
             <MenuItem Header="Справка">
                 <MenuItem Header="О программе" Click="About_OnClick"/>
             </MenuItem>
@@ -34,17 +37,20 @@
         <TabControl>
             <TabItem Header="Списки">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="81*"/>
+                        <ColumnDefinition Width="316*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <ToolBarTray Grid.Row="0">
+                    <ToolBarTray Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,303" Grid.RowSpan="2">
                         <ToolBar>
                             <Label Content="Сервера" Margin="0, 0, 26, 0"/>
                             <ComboBox Width="120" SelectedIndex="0" 
                                       ItemsSource="{Binding Servers}">
                             </ComboBox>
-                            <Button fa:Awesome.Content="Solid_Download" Command="{Binding LoadServersCommand}"/>
                             <Button ToolTip="Добавление" Margin="0, 0,2,0">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Height="20" Source="Media/add.png" Margin="0,0,3,0"/>
@@ -63,7 +69,7 @@
                         </ToolBar>
                         <ToolBar Band="1" BandIndex="0">
                             <Label Content="Отправители"/>
-                            <ComboBox Width="120" SelectedIndex="0" ItemsSource="{x:Static data:TestData.Senders}">
+                            <ComboBox Width="120" SelectedIndex="0" ItemsSource="{Binding Senders}">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate DataType="{x:Type model:Sender}">
                                         <StackPanel Orientation="Horizontal" ToolTip="{Binding Description}">
@@ -110,12 +116,12 @@
                         </ToolBar>
                     </ToolBarTray>
                     <DataGrid Grid.Row="1" AutoGenerateColumns="False"
-                              ItemsSource="{x:Static data:TestData.Recipients}"
+                              ItemsSource="{Binding Recipients}"
                               HorizontalGridLinesBrush="Bisque"
                               VerticalGridLinesBrush="Gray"
                               AlternatingRowBackground="Azure"
                               CanUserAddRows="False"
-                              HeadersVisibility="Column">
+                              HeadersVisibility="Column" Grid.ColumnSpan="2" Margin="0,67,0,0">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" MinWidth="40" MaxWidth="80" Binding="{Binding Id}"/>
                             <DataGridTextColumn Header="Имя" Width="*" MinWidth="150" Binding="{Binding Name}"/>
@@ -234,7 +240,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <GroupBox Grid.Column="0" Header="Письма">
-                        <ListBox ItemsSource="{x:Static data:TestData.Messages}"
+                        <ListBox ItemsSource="{Binding Messages}"
                                  Name="MessageList" DisplayMemberPath="">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
