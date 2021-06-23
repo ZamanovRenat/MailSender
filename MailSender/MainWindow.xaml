@@ -7,6 +7,7 @@
         xmlns:ex="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:MailSender"
         xmlns:data="clr-namespace:MailSender.Data"
+        xmlns:v="clr-namespace:MailSender.Views"
         xmlns:model="clr-namespace:MailSender.Models;assembly=MailSender.lib"
         mc:Ignorable="d"
         Title="{Binding Title}" 
@@ -115,20 +116,14 @@
                             <Button ToolTip="Удаление" fa:Awesome.Content="Solid_TrashRestore" Foreground="CornflowerBlue"/>
                         </ToolBar>
                     </ToolBarTray>
-                    <DataGrid Grid.Row="1" AutoGenerateColumns="False"
-                              ItemsSource="{Binding Recipients}"
-                              HorizontalGridLinesBrush="Bisque"
-                              VerticalGridLinesBrush="Gray"
-                              AlternatingRowBackground="Azure"
-                              CanUserAddRows="False"
-                              HeadersVisibility="Column" Grid.ColumnSpan="2" Margin="0,67,0,0">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" MinWidth="40" MaxWidth="80" Binding="{Binding Id}"/>
-                            <DataGridTextColumn Header="Имя" Width="*" MinWidth="150" Binding="{Binding Name}"/>
-                            <DataGridTextColumn Header="Адрес" MinWidth="120" Binding="{Binding Address}"/>
-                            <DataGridTextColumn Header="Описание" MinWidth="140" Binding="{Binding Description}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,74,19,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <v:RecipientsView Grid.Column="0"/>
+                        <v:RecipientsEditor Grid.Column="1"/>
+                    </Grid>
                 </Grid>
             </TabItem>
             <TabItem Header="Расписание">
