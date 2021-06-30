@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows;
 using MailSender.Interfaces;
+using MailSender.Models;
 using MailSender.Servcies;
+using MailSender.Servcies.InMemory;
 using MailSender.Services;
 using MailSender.ViewModels;
 using Microsoft.Extensions.Configuration;
@@ -34,6 +36,11 @@ namespace MailSender
 
             services.AddSingleton<IStatistic, InMemoryStatisticService>();
             services.AddSingleton<IMailService, DebugMailService>();
+
+            services.AddSingleton<IRepository<Server>, InMemoryServersRepository>();
+            services.AddSingleton<IRepository<Sender>, InMemorySendersRepository>();
+            services.AddSingleton<IRepository<Recipient>, InMemoryRecipientsRepository>();
+            services.AddSingleton<IRepository<Message>, InMemoryMessagesRepository>();
         }
 
         protected override void OnStartup(StartupEventArgs e)
